@@ -68,7 +68,7 @@ public class NewTest extends ReusableMethods {
 		try{
 		driver.get(System.getenv("APPURL"));
 		}catch(Exception ex)
-		logMessage(e.getMessage());
+		logMessage(ex.getMessage());
 		{
 
 		}
