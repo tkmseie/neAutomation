@@ -58,7 +58,7 @@ public class NewTest extends ReusableMethods {
 		 objfile = new FileInputStream(System.getProperty("user.dir")+"/src/cofig.properties");
 		  obj.load(objfile); 
 		 
-
+  logMessage(obj.getProperty("ExcepPath"))
 		 //Creating html file for logging results
 		//createdFirstReportPortion();
 
