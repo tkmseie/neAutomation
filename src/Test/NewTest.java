@@ -269,7 +269,8 @@ public class NewTest extends ReusableMethods {
 	public static void createdFirstReportPortion() throws IOException{
 		 
 		 			System.out.println("BeforeMethod1");
-  
+  		 			System.out.println(obj.getProperty("ScreenshotPath"));
+
 		FileUtils.cleanDirectory(new File(obj.getProperty("ScreenshotPath")));
 				 			System.out.println("BeforeMethod2");
 
