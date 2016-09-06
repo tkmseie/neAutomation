@@ -271,7 +271,7 @@ public class NewTest extends ReusableMethods {
 		 			System.out.println("BeforeMethod1");
   		 			System.out.println(obj.getProperty("ScreenshotPath"));
 
-		FileUtils.cleanDirectory(new File(obj.getProperty("ScreenshotPath")));
+		//FileUtils.cleanDirectory(new File(obj.getProperty("ScreenshotPath")));
 				 			System.out.println("BeforeMethod2");
 
 		FC.createNewFile();//Create file.
