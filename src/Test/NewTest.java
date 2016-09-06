@@ -55,6 +55,7 @@ public class NewTest extends ReusableMethods {
 	 * @throws BiffException 
 	 */	@Test
 		public static void firstTest() throws InterruptedException, IOException, BiffException {
+			System.out.println("FirstMethod");
 		 objfile = new FileInputStream(System.getProperty("user.dir")+"/src/cofig.properties");
 		  obj.load(objfile); 
 		 
@@ -267,8 +268,11 @@ public class NewTest extends ReusableMethods {
 	@BeforeTest
 	public static void createdFirstReportPortion() throws IOException{
 		 
-		   
+		 			System.out.println("BeforeMethod1");
+  
 		FileUtils.cleanDirectory(new File(obj.getProperty("ScreenshotPath")));
+				 			System.out.println("BeforeMethod2");
+
 		FC.createNewFile();//Create file.
 		  
 		  //Writing In to file.
