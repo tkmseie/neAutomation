@@ -58,7 +58,7 @@ public class NewTest extends ReusableMethods {
 		 objfile = new FileInputStream(System.getProperty("user.dir")+"/src/cofig.properties");
 		  obj.load(objfile); 
 		 
-  logMessage(obj.getProperty("ExcepPath"));
+       logMessage(obj.getProperty("ExcelFilePath"));
 		 //Creating html file for logging results
 		//createdFirstReportPortion();
 
@@ -332,28 +332,28 @@ public class NewTest extends ReusableMethods {
 		}
 		//Takes screenshot for all filter combinations
 		screenShot(titleObject.getText());
-		if(timerCount<5)
+		if(timerCount < Integer.parseInt(obj.getProperty("BestMaximumLoadTim")) )
 		{
 			System.out.println("Image is Loaded for "+titleObject.getText()+ " Link.");
-			  BW.write(" <li><font color='blue'>"+titleObject.getText()+ "Link<font></li>"); //Writing In To File.
+			  BW.write(" <li><font color='"+ obj.getProperty("BestLoadTimeColor")+"'>"+titleObject.getText()+ "Link<font></li>"); //Writing In To File.
 
 		}
-		else if(timerCount>=5 && timerCount<8)
+		else if(timerCount>=Integer.parseInt(obj.getProperty("BetterMiniumLoadTime")) && timerCount<Integer.parseInt(obj.getProperty("BetterMaximumLoadTime")))
 		{
 			System.out.println("Image is Loaded for "+titleObject.getText()+ " Link.");
-			  BW.write(" <li><font color='green'>"+titleObject.getText()+ " Link<font></li>"); //Writing In To File.
+			  BW.write(" <li><font color='"+obj.getProperty("BetterLoadTimeColor") +"'>"+titleObject.getText()+ " Link<font></li>"); //Writing In To File.
 
 		}
-		else if(timerCount>=8 && timerCount<15)
+		else if(timerCount>=Integer.parseInt(obj.getProperty("GoodMiniumLoadTime")) && timerCount<Integer.parseInt(obj.getProperty("GoodMaximumLoadTime")))
 		{
 			System.out.println("Image is Loaded for "+titleObject.getText()+ " Link.");
-			  BW.write(" <li><font color='yello'>"+titleObject.getText()+ " Link<font></li>"); //Writing In To File.
+			  BW.write(" <li><font color='"+ obj.getProperty("GoodLoadTimeColor")+"'>"+titleObject.getText()+ " Link<font></li>"); //Writing In To File.
 
 		}
 		else
 		{
 			logErrorMessage("Failed: Image is Loaded Not  for "+titleObject.getText()+ " Link.");
-			  BW.write(" <li><font color='red'>Failed: "+titleObject.getText()+ " Link<font></li>"); //Writing In To File.
+			  BW.write(" <li><font color='"+obj.getProperty("ErrorColor") +"'>Failed: "+titleObject.getText()+ " Link<font></li>"); //Writing In To File.
 
 		}
         }else{
