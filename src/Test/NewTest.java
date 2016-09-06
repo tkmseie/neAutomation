@@ -54,11 +54,8 @@ public class NewTest extends ReusableMethods {
 	 * if the application is loaded,it continues with iterating through clicking all the combinations of links
 	 * @throws BiffException 
 	 */	@Test
-		public static void firstTest() throws InterruptedException, IOException, BiffException {
-			System.out.println("FirstMethod");
+		public static void firstTest() throws InterruptedException, IOException, BiffException {		 
 		 
-		 
-       logMessage(obj.getProperty("ExcelFilePath"));
 		 //Creating html file for logging results
 		//createdFirstReportPortion();
 
@@ -67,8 +64,14 @@ public class NewTest extends ReusableMethods {
 		driver= new FirefoxDriver();
 		
 		//Navigating to the application URL
+		System.out.println("Given URL is: "+ System.getenv("APPURL"));
+		try{
 		driver.get(System.getenv("APPURL"));
-		
+		}catch(Exception ex)
+		logMessage(e.getMessage());
+		{
+
+		}
 		
 		//Verifying the logo is loaded or not. If the logo is notloaded the test will not be executed.
 		WebElement logoImageObj = findObject(driver, "xpath", "//*[@id=\"page\"]/header/div/hgroup/h2/ul/li[1]/a/img", "Policy Link Logo");
@@ -269,11 +272,9 @@ public class NewTest extends ReusableMethods {
 		 
 		objfile = new FileInputStream(System.getProperty("user.dir")+"/src/cofig.properties");
 		  obj.load(objfile); 
-		 			System.out.println("BeforeMethod1");
-  		 			System.out.println(obj.getProperty("ScreenshotPath"));
+  		 			System.out.println("Screenshot Path: "+obj.getProperty("ScreenshotPath"));
 
 		FileUtils.cleanDirectory(new File(obj.getProperty("ScreenshotPath")));
-				 			System.out.println("BeforeMethod2");
 
 		FC.createNewFile();//Create file.
 		  
