@@ -56,8 +56,7 @@ public class NewTest extends ReusableMethods {
 	 */	@Test
 		public static void firstTest() throws InterruptedException, IOException, BiffException {
 			System.out.println("FirstMethod");
-		 objfile = new FileInputStream(System.getProperty("user.dir")+"/src/cofig.properties");
-		  obj.load(objfile); 
+		 
 		 
        logMessage(obj.getProperty("ExcelFilePath"));
 		 //Creating html file for logging results
@@ -268,10 +267,12 @@ public class NewTest extends ReusableMethods {
 	@BeforeTest
 	public static void createdFirstReportPortion() throws IOException{
 		 
+		objfile = new FileInputStream(System.getProperty("user.dir")+"/src/cofig.properties");
+		  obj.load(objfile); 
 		 			System.out.println("BeforeMethod1");
   		 			System.out.println(obj.getProperty("ScreenshotPath"));
 
-		//FileUtils.cleanDirectory(new File(obj.getProperty("ScreenshotPath")));
+		FileUtils.cleanDirectory(new File(obj.getProperty("ScreenshotPath")));
 				 			System.out.println("BeforeMethod2");
 
 		FC.createNewFile();//Create file.
