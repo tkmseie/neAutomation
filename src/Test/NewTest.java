@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.List;
+import java.util.Properties;
+
 
 import jxl.Sheet;
 import jxl.Workbook;
@@ -42,6 +44,8 @@ public class NewTest extends ReusableMethods {
 	public static String titleBeforeClick;
 	public static boolean stopTest = false;
 	public static Integer clickCount =0;
+	public static Properties obj = new Properties(); 
+	public static FileInputStream objfile;
 	
 	
 	/**
@@ -51,7 +55,8 @@ public class NewTest extends ReusableMethods {
 	 * @throws BiffException 
 	 */	@Test
 		public static void firstTest() throws InterruptedException, IOException, BiffException {
-		 
+		 objfile = new FileInputStream(System.getProperty("user.dir")+"/src/cofig.properties");
+		  obj.load(objfile); 
 		 
 
 		 //Creating html file for logging results
@@ -263,7 +268,7 @@ public class NewTest extends ReusableMethods {
 	public static void createdFirstReportPortion() throws IOException{
 		 
 		   
-		FileUtils.cleanDirectory(new File("/var/lib/jenkins/jobs/NE_Selenium_Single_URL/workspace/src/Screenshots/"));
+		FileUtils.cleanDirectory(new File(obj.getProperty("ScreenshotPath")));
 		FC.createNewFile();//Create file.
 		  
 		  //Writing In to file.
@@ -383,7 +388,9 @@ public class NewTest extends ReusableMethods {
 	 public static void screenShot(String fileNameValue) throws IOException{
 		    fileNameValue = fileNameValue.replace("/", "_");
 	        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		    FileUtils.copyFile(scrFile, new File("/var/lib/jenkins/jobs/NE_Selenium_Single_URL/workspace/src/Screenshots/"+fileNameValue+".jpg"));		 
+		    //FileUtils.copyFile(scrFile, new File("/var/lib/jenkins/jobs/NE_Selenium_Single_URL/workspace/src/Screenshots/"+fileNameValue+".jpg"));	
+			FileUtils.copyFile(scrFile, new File(obj.getProperty("ScreenshotPath")+fileNameValue+".jpg"));		 
+	 
 	 }
 	 
 	 public static void clickObject (WebElement objectToClick) throws IOException{
