@@ -59,7 +59,7 @@ public class NewTest extends ReusableMethods {
 		 //Creating html file for logging results
 		//createdFirstReportPortion();
 
-					
+		System.out.println("inside test ");			
 		//Opens firefox driver
 		driver= new FirefoxDriver();
 		
