@@ -60,6 +60,8 @@ public class NewTest extends ReusableMethods {
 		//createdFirstReportPortion();
 try{
 	//Opens firefox driver
+		System.setProperty("webdriver.gecko.driver", "<Path to your WebDriver>");
+
 		driver= new FirefoxDriver();
 		
 		//Navigating to the application URL
