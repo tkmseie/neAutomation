@@ -61,7 +61,7 @@ public class NewTest extends ReusableMethods {
 try{
 	//Opens firefox driver
 	System.out.println("Inside script");
-		System.setProperty("webdriver.gecko.driver", "<Path to your WebDriver>");
+		//System.setProperty("webdriver.gecko.driver", "<Path to your WebDriver>");
 	System.out.println("Inside script");
 
 		driver= new FirefoxDriver();
