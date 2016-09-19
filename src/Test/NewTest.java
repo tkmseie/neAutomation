@@ -68,9 +68,8 @@ public class NewTest extends ReusableMethods {
 		try{
 		driver.get(System.getenv("APPURL"));
 		}catch(Exception ex)
-		logMessage(ex.getMessage());
 		{
-
+             logMessage(ex.getMessage());
 		}
 		
 		//Verifying the logo is loaded or not. If the logo is notloaded the test will not be executed.
