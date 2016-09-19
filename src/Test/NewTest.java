@@ -58,14 +58,13 @@ public class NewTest extends ReusableMethods {
 		 
 		 //Creating html file for logging results
 		//createdFirstReportPortion();
-
-		System.out.println("inside test ");			
-		//Opens firefox driver
+try{
+	//Opens firefox driver
 		driver= new FirefoxDriver();
 		
 		//Navigating to the application URL
 		System.out.println("Given URL is: "+ System.getenv("APPURL"));
-		try{
+		
 		driver.get(System.getenv("APPURL"));
 		}catch(Exception ex)
 		{
