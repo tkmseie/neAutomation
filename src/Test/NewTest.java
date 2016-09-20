@@ -192,7 +192,7 @@ try{
 		{
 			List<WebElement> allLastlinks = currentGrid.findElements(By.className("atlas-display-exposed-filter"));
 			       Integer totalLinkCount = allLastlinks.size();
-				    logMessage("1");
+				    //logMessage("1");
 
 					for(i=0; i<totalLinkCount; i++)  
 					{
@@ -226,13 +226,8 @@ try{
 			//List<WebElement> allLinks = currentGrid.findElements(By.xpath("//a[contains(@class, '-filter')]"));
             List<WebElement> allLinks = currentGrid.findElements(By.tagName("a"));
 
-			for(j=0; j<allLinks.size(); j++)  
-			{
-				logMessage(allLinks.get(j).getText());
-			}
-
 			Integer totalLinkCount = allLinks.size();
-		    logMessage(totalLinkCount.toString());
+		    //logMessage(totalLinkCount.toString());
 
 			for(j=0; j<totalLinkCount; j++)  
 			{
