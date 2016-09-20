@@ -60,9 +60,9 @@ public class NewTest extends ReusableMethods {
 		//createdFirstReportPortion();
 try{
 	//Opens firefox driver
-	System.out.println("Inside script");
+	//System.out.println("Inside script");
 		//System.setProperty("webdriver.gecko.driver", "<Path to your WebDriver>");
-	System.out.println("Inside script");
+	//System.out.println("Inside script");
 
 		driver= new FirefoxDriver();
 		
