@@ -219,7 +219,9 @@ try{
 							spinnerObj = currentGrid.findElement(By.className("atlas-spinner"));
 							}catch (Exception e)
 							{
-                                Thread.sleep(1000);
+                                Thread.sleep(2000);
+
+								counterSpinner++;
 								counterSpinner++;
 								currentGrid = driver.findElement(By.className("dsp-filter-wrap")).findElements(By.cssSelector(".atlas-grey-wrapper-small.atlas-display-filter")).get(currIndex);
 							    spinnerObj = currentGrid.findElement(By.className("atlas-spinner"));
