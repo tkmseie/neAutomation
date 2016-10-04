@@ -46,6 +46,8 @@ public class NewTest extends ReusableMethods {
 	public static Integer clickCount =0;
 	public static Properties obj = new Properties(); 
 	public static FileInputStream objfile;
+	public static int counterSpinner;
+
 	
 	
 	/**
@@ -206,7 +208,37 @@ try{
 							//getLinkObj.click();
 							clickObject(getLinkObj);
 							clickCount++;
-							Thread.sleep(4000);
+							Thread.sleep(2000);
+							
+							counterSpinner = 2;
+							WebElement spinnerObj;
+							try{
+							currentGrid = driver.findElement(By.className("dsp-filter-wrap")).findElements(By.cssSelector(".atlas-grey-wrapper-small.atlas-display-filter")).get(currIndex);
+							spinnerObj = currentGrid.findElement(By.className("atlas-spinner"));
+							}catch (Exception e)
+							{
+                                Thread.sleep(1000);
+								counterSpinner++;
+								currentGrid = driver.findElement(By.className("dsp-filter-wrap")).findElements(By.cssSelector(".atlas-grey-wrapper-small.atlas-display-filter")).get(currIndex);
+							    spinnerObj = currentGrid.findElement(By.className("atlas-spinner"));
+							}
+							//Thread.sleep(1000);
+																						//logMessage("displaed5");
+
+							while(spinnerObj.isDisplayed())
+							{
+								
+								Thread.sleep(1000);
+								counterSpinner++;
+								currentGrid = driver.findElement(By.className("dsp-filter-wrap")).findElements(By.cssSelector(".atlas-grey-wrapper-small.atlas-display-filter")).get(currIndex);
+								spinnerObj = currentGrid.findElement(By.className("atlas-spinner"));
+								if (counterSpinner>15)
+								{
+									logErrorMessage("Image is not started to be loaded.");
+									break;
+								}
+						   }
+						   							logMessage("Waiting seconds:"+counterSpinner);
 							verifyImage();	
 						}
 						else
@@ -314,7 +346,7 @@ try{
         if (!compareStrings(titleBeforeClick, titleObject.getText()))
         {
         //After clicking the filter links, the script waits for 4 seconds. Now here the timer starts to count from 5th second.
-		for (timerCount=4; timerCount<15; timerCount++)
+		for (timerCount=counterSpinner; timerCount<15; timerCount++)
 		{
 			List<WebElement> divElements = imageObject.findElements(By.tagName("div"));
             if (divElements.size() !=0)
