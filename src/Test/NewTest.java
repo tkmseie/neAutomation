@@ -162,7 +162,9 @@ try{
 		}
 		catch(Exception e)
 		{
-			logErrorMessage("No subfilters available.");
+				System.out.println(e.getMessage());
+			System.out.println(e.getStackTrace().toString());
+			logErrorMessage("Error while identifying object. Filters for current breakdown will not be executed. Moving to next breakdown set.");
 		}
 		}
 		else
