@@ -164,6 +164,7 @@ try{
 		{
 				System.out.println(e.getMessage());
 			System.out.println(e.getStackTrace().toString());
+						logMessage(e.getLocalizedMessage());
 			logErrorMessage("Error while identifying object. Filters for current breakdown will not be executed. Moving to next breakdown set.");
 		}
 		}
@@ -220,14 +221,14 @@ try{
 							}catch (Exception e)
 							{
                                 Thread.sleep(2000);
-
+                                logMessage("displaed5");
 								counterSpinner++;
 								counterSpinner++;
 								currentGrid = driver.findElement(By.className("dsp-filter-wrap")).findElements(By.cssSelector(".atlas-grey-wrapper-small.atlas-display-filter")).get(currIndex);
 							    spinnerObj = currentGrid.findElement(By.className("atlas-spinner"));
 							}
 							//Thread.sleep(1000);
-																						//logMessage("displaed5");
+																						logMessage("displaed6");
 
 							while(spinnerObj.isDisplayed())
 							{
