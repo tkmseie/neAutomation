@@ -229,7 +229,7 @@ try{
 							}
 							//Thread.sleep(1000);
 																						logMessage("displaed6");
-
+                        try{
 							while(spinnerObj.isDisplayed())
 							{
 								
@@ -243,6 +243,11 @@ try{
 									break;
 								}
 						   }
+						}catch(Exception ex)
+						{
+															Thread.sleep(1000);
+                                                            counterSpinner++;
+						}
 						   							logMessage("Waiting seconds:"+counterSpinner);
 							verifyImage();	
 						}
