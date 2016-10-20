@@ -56,7 +56,7 @@ public class NewTest extends ReusableMethods {
 	 * if the application is loaded,it continues with iterating through clicking all the combinations of links
 	 * @throws BiffException 
 	 */	@Test
-		public static void firstTest() throws InterruptedException, IOException, BiffException {		 
+		public static void firstTest() throws InterruptedException, IOException, BiffException ,AWTException{		 
 		 
 		 //Creating html file for logging results
 		//createdFirstReportPortion();
@@ -71,7 +71,8 @@ try{
 		//Navigating to the application URL
 		System.out.println("Given URL is: "+ System.getenv("APPURL"));
 		
-		driver.get(System.getenv("APPURL"));
+		//driver.get(System.getenv("APPURL"));
+		NavigateToTest.NavigateToBrowser(System.getenv("APPURL"));
 		}catch(Exception ex)
 		{
              logMessage(ex.getMessage());
