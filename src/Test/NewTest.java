@@ -72,7 +72,7 @@ try{
 		System.out.println("Given URL is: "+ System.getenv("APPURL"));
 		
 		//driver.get(System.getenv("APPURL"));
-		NavigateToTest.NavigateToBrowser(System.getenv("APPURL"));
+		NavigateToTest.NavigateToBrowser(driver,System.getenv("APPURL"));
 		}catch(Exception ex)
 		{
              logMessage(ex.getMessage());
