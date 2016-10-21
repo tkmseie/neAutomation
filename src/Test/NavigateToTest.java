@@ -81,8 +81,8 @@ class BrowserThread extends Thread {
 	   }catch(Exception e)
 	   {
 		   Actions builder = new Actions(driver1);
-		  builder.keyDown(Keys.COMMAND);
-		  builder.keyDown(Keys.TAB);
+		//  builder.keyDown(Keys.COMMAND);
+		 // builder.keyDown(Keys.TAB);
 
 		  
 	   }
