@@ -73,7 +73,7 @@ class BrowserThread extends Thread {
     public void run() {
         
 	   try{
-    	driver1.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
+    //	driver1.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 
     	driver1.get(webURL);
         
