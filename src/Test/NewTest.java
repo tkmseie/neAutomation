@@ -68,7 +68,7 @@ try{
 		//System.setProperty("webdriver.gecko.driver", "<Path to your WebDriver>");
 	//System.out.println("Inside script");
 
-		driver= new FirefoxDriver();
+		//driver= new FirefoxDriver();
 		
 		//Navigating to the application URL
 		System.out.println("Given URL is: "+ System.getenv("APPURL"));
