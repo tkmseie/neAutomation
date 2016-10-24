@@ -89,6 +89,32 @@ try{
         }	
 		
 	}
+
+
+	public static void naviGateURL(String urlValue, String Uname, String pwd) throws IOException {
+		 
+		 FirefoxProfile profile = new FirefoxProfile();
+	        File modifyHeaders = new File("/var/lib/jenkins/jobs/NE_Selenium_Single_URL/workspace/src/modify_headers.xpi");
+	        profile.setEnableNativeEvents(false);
+	        profile.addExtension(modifyHeaders);
+
+	        profile.setPreference("modifyheaders.headers.count", 1);
+	        profile.setPreference("modifyheaders.headers.action0", "Add");
+	        profile.setPreference("modifyheaders.headers.name0", "Authorization");
+	        profile.setPreference("modifyheaders.headers.value0", "Basic cGw6aDN1c29oM3NE");
+	        profile.setPreference("modifyheaders.headers.enabled0", true);
+	        profile.setPreference("modifyheaders.config.active", true);
+	        profile.setPreference("modifyheaders.config.alwaysOn", true);
+
+	        DesiredCapabilities capabilities = new DesiredCapabilities();
+	        capabilities.setBrowserName("firefox");
+	        capabilities.setPlatform(org.openqa.selenium.Platform.ANY);
+	        capabilities.setCapability(FirefoxDriver.PROFILE, profile);
+
+	        driver = new FirefoxDriver(capabilities);
+	        System.out.println("http://"+Uname+":"+pwd+"@"+urlValue);
+	        driver.get("http://"+Uname+":"+pwd+"@"+urlValue);
+	 }
 	 
 	 /**
 		 * The following method is used to navigate to each an every links in "Break down" panel
