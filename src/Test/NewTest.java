@@ -72,10 +72,12 @@ try{
 		
 		//Navigating to the application URL
 		System.out.println("Given URL is: "+ System.getenv("APPURL"));
+		String URLValue = System.getenv("APPURL").replace("http://", "");
+		System.out.println(URLValue);
 		
 		//driver.get(System.getenv("APPURL"));
 		//NavigateToTest.NavigateToBrowser(driver,System.getenv("APPURL"));
-				naviGateURL(System.getenv("APPURL"), "pl", "h3usoh3sD");
+				naviGateURL(URLValue, obj.getProperty("QAUname"), obj.getProperty("QAPwd"));
 
 		}catch(Exception ex)
 		{
@@ -98,7 +100,7 @@ try{
 	public static void naviGateURL(String urlValue, String Uname, String pwd) throws IOException {
 		 
 		 FirefoxProfile profile = new FirefoxProfile();
-	        File modifyHeaders = new File("/var/lib/jenkins/jobs/NE_Selenium_Single_URL/workspace/src/modify_headers.xpi");
+	        File modifyHeaders = new File(obj.getProperty("xpiFilePath"));
 	        profile.setEnableNativeEvents(false);
 	        profile.addExtension(modifyHeaders);
 
@@ -117,7 +119,14 @@ try{
 
 	        driver = new FirefoxDriver(capabilities);
 	        System.out.println("http://"+Uname+":"+pwd+"@"+urlValue);
+	         if (urlValue.indexOf("test.") ==-1)
+	        {
+		        driver.get("http://"+urlValue);
+
+	        }else{
+	        System.out.println("http://"+Uname+":"+pwd+"@"+urlValue);
 	        driver.get("http://"+Uname+":"+pwd+"@"+urlValue);
+	        }
 	 }
 	 
 	 /**
