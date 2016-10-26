@@ -392,6 +392,8 @@ try{
 		WebElement imageObject = driver.findElement(By.tagName("figure"));
 		//Identifies the title object
 		WebElement titleObject = driver.findElement(By.className("display-title"));
+	   logMessage("Waiting seconds:"+counterSpinner);
+
 		//After clicking the filter links the title should be changed. If not changed, it may be a network error. So this condition ensures the title is changed
         if (!compareStrings(titleBeforeClick, titleObject.getText()))
         {
