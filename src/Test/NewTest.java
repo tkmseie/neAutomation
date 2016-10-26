@@ -393,6 +393,7 @@ try{
 		//Identifies the title object
 		WebElement titleObject = driver.findElement(By.className("display-title"));
 	   logMessage("Waiting seconds:"+counterSpinner);
+       		screenShot("ForDebug_"+counterSpinner);
 
 		//After clicking the filter links the title should be changed. If not changed, it may be a network error. So this condition ensures the title is changed
         if (!compareStrings(titleBeforeClick, titleObject.getText()))
@@ -414,7 +415,8 @@ try{
               }
             else
               {
- 
+                       		screenShot("ForDebug_"+timerCount);
+
 		        Thread.currentThread().sleep(1000);
              }  
 		}
