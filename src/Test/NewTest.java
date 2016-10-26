@@ -416,6 +416,8 @@ try{
 		        Thread.currentThread().sleep(1000);
              }  
 		}
+					        	logMessage("Waiting seconds:"+timerCount);
+
 		//Takes screenshot for all filter combinations
 		screenShot(titleObject.getText());
 		if(timerCount < Integer.parseInt(obj.getProperty("BestMaximumLoadTim")) )
