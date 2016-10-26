@@ -438,12 +438,12 @@ try{
 		}
 		else
 		{
+			        	logMessage("Waiting seconds:"+timerCount);
 			logErrorMessage("Failed: Image is Loaded Not  for "+titleObject.getText()+ " Link.");
 			  BW.write(" <li><font color='"+obj.getProperty("ErrorColor") +"'>Failed: "+titleObject.getText()+ " Link<font></li>"); //Writing In To File.
 
 		}
         }else{
-        	logMessage("Waiting seconds:"+timerCount);
 			logErrorMessage("Failed: Unable to communicate to the server. Plesae check network connectivity");
 			BW.write(" <li><font color='red'>Failed: Unable to communicate to the server. Plesae check network connectivity<font></li>"); //Writing In To File.
          //   Thread.currentThread().stop();
