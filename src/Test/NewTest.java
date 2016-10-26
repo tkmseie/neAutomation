@@ -443,7 +443,8 @@ try{
 
 		}
         }else{
-        	logErrorMessage("Failed: Unable to communicate to the server. Plesae check network connectivity");
+        	logMessage("Waiting seconds:"+timerCount);
+			logErrorMessage("Failed: Unable to communicate to the server. Plesae check network connectivity");
 			BW.write(" <li><font color='red'>Failed: Unable to communicate to the server. Plesae check network connectivity<font></li>"); //Writing In To File.
          //   Thread.currentThread().stop();
         }
