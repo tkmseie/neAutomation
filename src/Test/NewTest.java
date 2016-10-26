@@ -399,7 +399,7 @@ try{
         if (!compareStrings(titleBeforeClick, titleObject.getText()))
         {
         //After clicking the filter links, the script waits for 4 seconds. Now here the timer starts to count from 5th second.
-		for (timerCount=counterSpinner; timerCount<15; timerCount++)
+		for (timerCount=counterSpinner; timerCount<30; timerCount++)
 		{
 			List<WebElement> divElements = imageObject.findElements(By.tagName("div"));
             if (divElements.size() !=0)
@@ -407,8 +407,9 @@ try{
     			try{
             	WebElement nodataObject = imageObject.findElement(By.className("no-data"));
             	   logErrorMessage("No data message shown for "+titleObject.getText()+ " Link.");
-  			       BW.write(" <li><font color='orange'>No data message shown for "+titleObject.getText()+ " Link<font></li>");    			}catch(Exception ex){
-    				
+  			       BW.write(" <li><font color='orange'>No data message shown for "+titleObject.getText()+ " Link<font></li>");    			
+					 }catch(Exception ex){
+
     			}
             	break;
 
