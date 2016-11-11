@@ -262,7 +262,6 @@ try{
 							}catch (Exception e)
 							{
                                 Thread.sleep(2000);
-                                logMessage("displaed5");
 								counterSpinner++;
 								counterSpinner++;
 								currentGrid = driver.findElement(By.className("dsp-filter-wrap")).findElements(By.cssSelector(".atlas-grey-wrapper-small.atlas-display-filter")).get(currIndex);
@@ -302,7 +301,7 @@ try{
 		//If it is not last filter panel, then it clicks each and every link & again navigates to next panel by calling this function recursively
 		else
 		{
-		    logMessage(currIndex.toString());
+		   // logMessage(currIndex.toString());
 			currentGrid = driver.findElement(By.className("dsp-filter-wrap")).findElements(By.cssSelector(".atlas-grey-wrapper-small.atlas-display-filter")).get(currIndex);
 			//List<WebElement> allLinks = currentGrid.findElements(By.className("atlas-display-exposed-filter"));
             logMessage(currentGrid.getText());
@@ -393,8 +392,8 @@ try{
 		WebElement imageObject = driver.findElement(By.tagName("figure"));
 		//Identifies the title object
 		WebElement titleObject = driver.findElement(By.className("display-title"));
-	   logMessage("Waiting seconds:"+counterSpinner);
-       		screenShot("ForDebug_"+counterSpinner);
+	  // logMessage("Waiting seconds:"+counterSpinner);
+       //		screenShot("ForDebug_"+counterSpinner);
 
 		//After clicking the filter links the title should be changed. If not changed, it may be a network error. So this condition ensures the title is changed
         if (!compareStrings(titleBeforeClick, titleObject.getText()))
