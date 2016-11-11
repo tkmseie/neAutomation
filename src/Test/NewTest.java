@@ -288,7 +288,7 @@ try{
 															Thread.sleep(1000);
                                                             counterSpinner++;
 						}
-						   							logMessage("Waiting seconds:"+counterSpinner);
+						   							//logMessage("Waiting seconds:"+counterSpinner);
 							verifyImage();	
 						}
 						else
@@ -421,7 +421,7 @@ try{
 		        Thread.currentThread().sleep(1000);
              }  
 		}
-					        	logMessage("Waiting seconds:"+timerCount);
+					        	//logMessage("Waiting seconds:"+timerCount);
 
 		//Takes screenshot for all filter combinations
 		screenShot(titleObject.getText());
