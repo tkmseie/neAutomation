@@ -126,6 +126,7 @@ try{
 	        }else{
 	        System.out.println("http://"+Uname+":"+pwd+"@"+urlValue);
 	        driver.get("http://"+Uname+":"+pwd+"@"+urlValue);
+			driver.get("http://"+urlValue);
 	        }
 	 }
 	 
